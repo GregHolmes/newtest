@@ -18,10 +18,12 @@ install:
 - composer install
 - php bin/console doctrine:database:create --env=test
 - php bin/console doctrine:schema:create --env=test
-notifications: 
+notifications:
 email: iam+testing@gregholmes.co.uk
 deploy:
   provider: heroku
   api_key:
     secure: HKhSJq4DC58hz9JFvq5eU8RYAZ1LalePaDfhyfSuySV8A64WYxbfUVSuzOJzMTR1VbH60MbcKT/wQkhGRmWTaVzzgnJnIiSR99P1KVqYKAVmgK1vDfzupjVEOQJDK0ZOXkXl+KUY3AF86yYDHnYlbFt6VP9q2HU9r3GjelF5dWHSa2qA/eokdWQTJdhJgJQKT+QTXqeVyTckXMIA0xWrToY7erVu4QUQQAiMu23rtvky+ezMvkj4vNrZdv45MxN/S2g1sXrtOmIoZRilsoiouqzST3gsnP2VCEvWKGelc6WGdGrh1iyb63NlAQc6QwUGbFWTESerIIAUUGeAw6hATQlaQO4MCxpCBO6+bmNw5N8fsQOgQxuuagzTTQPYl03AWat+739kem9SGrcDppx9+magzyk1TyQgaSHOblU6gNmcrr+S9cInwWOnRLNe75PoJ40SQpfkFcO0I7E+wK7eGcnlTT/KPLTqPzKKHvsHWUU3C8TcAOcPbuoRQmW2YZRPAagvS+3ZQtX5QqzcPiz3S88VpVidwCC4oEmcE6l6/a21/56SXkqp3EOvmo5bIu0AhgK7B8vWfVcJoUdAPBG3Xm3AWz/3JRUgDjMXa/nNRbBiu907jaUx5MULlcSiJdgEVC3wfCyEYv4ooJE7WVQS3eA7oQxz14Ez76oNbTohRnA=
-  app: last-test-space
+  app:
+      master: last-test-space
+      staging: last-test-space-staging
