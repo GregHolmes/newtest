@@ -1,0 +1,27 @@
+language: php
+sudo: false
+services:
+- mysql
+cache:
+  directories:
+  - "$HOME/.composer/cache/files"
+matrix:
+  fast_finish: true
+  include:
+  - php: 7.1
+env:
+- SYMFONY_VERSION="4.0.*" DB=mysql
+before-install:
+- composer self-update
+install:
+- cp .env.travis.dist .env
+- composer install
+- php bin/console doctrine:database:create --env=test
+- php bin/console doctrine:schema:create --env=test
+notifications:
+email: iam+testing@gregholmes.co.uk
+deploy:
+  provider: heroku
+  api_key:
+    secure:
+  app: last-test-space
