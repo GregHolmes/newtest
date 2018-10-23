@@ -34,6 +34,10 @@ class BlogController extends Controller
     /**
      * @Route("/", name="homepage")
      * @Route("/entries", name="entries")
+     *
+     * @param Request $request
+     *
+     * @return mixed
      */
     public function entriesAction(Request $request)
     {
@@ -53,6 +57,10 @@ class BlogController extends Controller
 
     /**
      * @Route("/entry/{slug}", name="entry")
+     *
+     * @param string $slug
+     *
+     * @return mixed
      */
     public function entryAction($slug)
     {
@@ -71,6 +79,10 @@ class BlogController extends Controller
 
     /**
      * @Route("/author/{name}", name="author")
+     *
+     * @param string $name
+     *
+     * @return mixed
      */
     public function authorAction($name)
     {
