@@ -37,6 +37,10 @@ class AdminController extends Controller
 
     /**
      * @Route("/author/create", name="author_create")
+     *
+     * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function createAuthorAction(Request $request)
     {
@@ -124,7 +128,7 @@ class AdminController extends Controller
     /**
      * @Route("/delete-entry/{entryId}", name="admin_delete_entry")
      *
-     * @param $entryId
+     * @param integer $entryId
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
